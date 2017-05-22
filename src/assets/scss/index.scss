@@ -5,12 +5,28 @@ body {
   color: #2c3e50;
 }
 
+.nav {
+  width: 100%;
+  background: #61C28B;
+  color: #fff;
+  text-align: center;
+  a {
+    display: inline-block;
+    padding: 1em;
+    color: #fff;
+    text-decoration: none;
+  }
+  .router-link-exact-active {
+    background: rgba(255,255,255,.2);
+  }
+}
+
 .header {
   width: 100%;
   margin-bottom: 2em;
   padding: 1em;
-  background: #61C28B;
-  color: #fff;
+  background: #efefef;
+  color: #333;
   text-align: center;
 }
 
