@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 import api from '../services/api'
 import dropdown from './Dropdown'
 import movie from './Movie'
@@ -24,12 +25,14 @@ export default {
   name: 'hello',
   data () {
     return {
-      movies: [],
-      genres: [],
       selectedGenre: null
     }
   },
   computed: {
+    ...mapState([
+      'movies',
+      'genres'
+    ]),
     filteredMovies() {
       if (this.selectedGenre) {
         const genre = parseInt(this.selectedGenre)
@@ -43,18 +46,14 @@ export default {
     }
   },
   methods: {
-
+    ...mapActions([
+      'getMovies',
+      'getGenres'
+    ])
   },
   created () {
-    api.getMovies()
-      .then(data => {
-        this.movies = data;
-      })
-
-    api.getGenres()
-      .then(genres => {
-        this.genres = genres;
-      })
+    this.getMovies()
+    this.getGenres()
   },
   components: {
     dropdown,
