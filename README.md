@@ -1,6 +1,8 @@
 # example-project
 
-> A Vue.js project
+Demo project for Introduction to Vue.js talk.
+
+Slides: http://slides.com/nuria-fl/vue-js-1#/
 
 ## Build Setup
 
